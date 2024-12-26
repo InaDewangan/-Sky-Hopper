@@ -1,0 +1,123 @@
+.front-page {
+  height: 100vh;
+  background-image: url('https://www.shutterstock.com/image-vector/gaming-vector-background-landscape-video-600nw-2308922901.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.banner {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  background-image: url('/public/woodenbanner.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 1000px; /* Corrected height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideDown 2s ease-out; /* Slide-down animation for the banner */
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.game-title {
+  font-size: 3rem;
+  color: white;
+  font-family: 'Press Start 2P', cursive; /* Game-like font */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin: 0;
+  opacity: 0; /* Initially hidden */
+  animation: fadeInText 2s ease-in 2s forwards; /* Delayed fade-in animation for text */
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Slight upward start position */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.play-button {
+  margin-top: 20px;
+  margin-bottom: 80px;
+  width: 210px; /* Adjust size as needed */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  opacity: 0; /* Initially hidden */
+  animation: slideUp 2s ease-in 3s forwards; /* Slide-up animation with delay */
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.play-button:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Large Screens */
+@media (min-width: 1200px) {
+  .game-title {
+    font-size: 4rem;
+  }
+  .play-button {
+    width: 200px;
+  }
+}
+
+/* Medium Screens */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .game-title {
+    font-size: 2.5rem;
+  }
+  .play-button {
+    width: 150px;
+  }
+}
+
+/* Small Screens */
+@media (max-width: 767px) {
+  .game-title {
+    font-size: 2rem;
+  }
+  .banner {
+    width: 100%;
+    height: 400px; /* Reduced height for smaller screens */
+  }
+  .play-button {
+    width: 170px;
+  }
+}
