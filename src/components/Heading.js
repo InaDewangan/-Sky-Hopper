@@ -12,7 +12,7 @@ const Heading = () => {
 const styles = {
   header: {
     width: '100%',
-    backgroundColor: '#4caf50', // Green background
+    background: 'linear-gradient(to right, #9f4916, #95421a, #ac501f, #ad581b)', 
     padding: '10px 20px',
     boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
     textAlign: 'center',
